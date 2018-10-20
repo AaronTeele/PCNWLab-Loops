@@ -23,13 +23,12 @@
     @example - squareEach([1,2,3,4]); // [1,4,9,16]
 */
     const squareEach = arr => {
-        const arrCopy = arr;
-        const squared = [];
+        const arrCopy = arr.slice();
         for(let i = 0; i < arrCopy.length; i++){
-            squared.push(arrCopy[i] ** 2);
-        }
-        return squared;
-    }
+            arrCopy[i] = arrCopy[i] ** 2;
+        };
+        return arrCopy;
+    };
 
     console.log(squareEach([1,2,3,4])); // [1,4,9,16]
 
@@ -107,8 +106,8 @@
         const negBack = [];
         for(let i = 0; i < arrCopy.length; i++){
             negBack.unshift(arrCopy[i] * - 1);
-        }
+        };
         return negBack;
-    }
+    };
 
     console.log(negateBackwards([1,2,3,4])); // [-4, -3, -2, -1]
